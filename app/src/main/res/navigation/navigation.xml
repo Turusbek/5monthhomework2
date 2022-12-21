@@ -27,7 +27,9 @@
         <argument
             app:argType="string"
             android:name="et_me"/>
-
+        <argument
+            app:argType="string"
+            android:name="percentage"/>
 
     </fragment>
 </navigation>

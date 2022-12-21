@@ -5,23 +5,18 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.EditText
-import androidx.core.os.bundleOf
-import androidx.navigation.NavController
-import androidx.navigation.findNavController
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
-import com.example.a5monthhomework2.R
 import com.example.a5monthhomework2.databinding.FragmentMainragmentBinding
+import com.example.a5monthhomework2.model.MainFragmentViewModel
 
 class MainFragment : Fragment() {
+    private val viewModel: MainFragmentViewModel by viewModels()
 private lateinit var binding:FragmentMainragmentBinding
-    private var _controller: NavController? = null
-    protected val controller get() = _controller!!
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-
          binding = FragmentMainragmentBinding.inflate(inflater)
         return binding.root
 
@@ -30,11 +25,23 @@ private lateinit var binding:FragmentMainragmentBinding
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.btnRequest.setOnClickListener {
-            val directions = MainFragmentDirections.actionMainFragmentToSecondFragment(binding.etYou
-                .text.toString(),binding.etMe.text.toString())
-            view.findNavController().navigate(directions)
+            getRequest()
         }
-             } }
+    }
+
+    private fun getRequest(){
+        viewModel.getRequest(binding.etYou.text.toString(),binding.etMe.text.toString())
+            .observe(viewLifecycleOwner){
+                findNavController().navigate(
+                    MainFragmentDirections
+                        .actionMainFragmentToSecondFragment(
+                            binding.etYou.text.toString(),
+                            it.percentage
+                            ,binding.etMe.text.toString())
+                )
+            }
+    }
+}
 
 
 
