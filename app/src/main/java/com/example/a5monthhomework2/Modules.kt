@@ -35,13 +35,9 @@ object Modules {
             .addConverterFactory(GsonConverterFactory.create())
             .build()
     }
-    @Module
-    @InstallIn(SingletonComponent::class)
-     class SharedPreferencesModule {
         @Singleton
         @Provides
         fun provideSharedPreference(@ApplicationContext context: Context): SharedPreferences {
             return context.getSharedPreferences("preferences", Context.MODE_PRIVATE)
         }
-
-    }}
+    }
