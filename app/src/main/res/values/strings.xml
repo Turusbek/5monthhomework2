@@ -5,5 +5,17 @@
     <string name="history">History</string>
     <string name="home">Home</string>
     <string name="calculator">Love Calculator</string>
+    <string name="start">Get Started</string>
+    <string name="many">It s Funs and Many more</string>
+    <string name="you">You</string>
+    <string name="me">Me</string>
+    <string name="percentage">100%</string>
+    <string name="again">Try Again</string>
+    <string name="fName">Firs Name</string>
+    <string name="sName">Second Name</string>
+    <string name="calculate">Calculate</string>
+    <string name="take">You should take the to</string>
+    <string name="have">Have a good time</string>
+    <string name="next">Next</string>
 
 </resources>

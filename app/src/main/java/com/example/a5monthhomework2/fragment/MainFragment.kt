@@ -9,15 +9,17 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.example.a5monthhomework2.databinding.FragmentMainragmentBinding
 import com.example.a5monthhomework2.model.MainFragmentViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainFragment : Fragment() {
     private val viewModel: MainFragmentViewModel by viewModels()
-private lateinit var binding:FragmentMainragmentBinding
+    private lateinit var binding: FragmentMainragmentBinding
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-         binding = FragmentMainragmentBinding.inflate(inflater)
+        binding = FragmentMainragmentBinding.inflate(inflater)
         return binding.root
 
     }
@@ -29,15 +31,15 @@ private lateinit var binding:FragmentMainragmentBinding
         }
     }
 
-    private fun getRequest(){
-        viewModel.getRequest(binding.etYou.text.toString(),binding.etMe.text.toString())
-            .observe(viewLifecycleOwner){
+    private fun getRequest() {
+        viewModel.getRequest(binding.etYou.text.toString(), binding.etMe.text.toString())
+            .observe(viewLifecycleOwner) {
                 findNavController().navigate(
                     MainFragmentDirections
                         .actionMainFragmentToSecondFragment(
                             binding.etYou.text.toString(),
-                            it.percentage
-                            ,binding.etMe.text.toString())
+                            it.percentage, binding.etMe.text.toString()
+                        )
                 )
             }
     }

@@ -22,6 +22,7 @@
                 android:id="@+id/image_view"
                 android:layout_width="match_parent"
                 android:layout_height="220dp"
+                android:background="@drawable/heart"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -45,7 +46,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="18sp"
-                android:text="First name"
+                android:text="@string/fName"
                 android:textColor="@color/black"
                 android:textSize="20sp"
                 app:layout_constraintStart_toStartOf="@+id/tv_love_calculator"
@@ -58,7 +59,7 @@
                 android:layout_height="50sp"
                 android:layout_marginTop="12dp"
                 android:background="@drawable/bc_edt"
-                android:hint="You"
+                android:hint="@string/you"
                 android:padding="16dp"
                 android:textColorHint="@color/black"
                 app:layout_constraintStart_toStartOf="@+id/tv_first_name"
@@ -69,7 +70,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="18sp"
-                android:text="Second name"
+                android:text="@string/sName"
                 android:textColor="@color/black"
                 android:textColorHint="@color/black"
                 android:textSize="20sp"
@@ -83,25 +84,26 @@
                 android:layout_height="50sp"
                 android:layout_marginTop="12dp"
                 android:background="@drawable/bc_edt"
-                android:hint="Me"
-                android:textColorHint="@color/black"
+                android:hint="@string/me"
                 android:padding="16dp"
+                android:textColorHint="@color/black"
                 app:layout_constraintStart_toStartOf="@+id/tv_second_me"
                 app:layout_constraintTop_toBottomOf="@+id/tv_second_me" />
 
 
             <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_request"
                 android:layout_width="150dp"
                 android:layout_height="60dp"
-                app:cornerRadius="15dp"
-                android:text="Calculate"
-                android:id="@+id/btn_request"
                 android:layout_margin="18dp"
-                android:textColor="@color/black"
                 android:backgroundTint="@color/violet"
-                app:layout_constraintStart_toStartOf="@+id/et_me"
+                android:text="@string/calculate"
+                android:textColor="@color/black"
+                app:cornerRadius="15dp"
                 app:layout_constraintEnd_toEndOf="@+id/et_me"
-                app:layout_constraintTop_toBottomOf="@+id/et_me"/>
+                app:layout_constraintStart_toStartOf="@+id/et_me"
+                app:layout_constraintTop_toBottomOf="@+id/et_me" />
+
             <TextView
                 android:id="@+id/tv_home"
                 android:layout_width="wrap_content"
@@ -123,9 +125,9 @@
                 android:text="@string/history"
                 android:textColor="@color/black"
                 android:textSize="20sp"
+                app:drawableTopCompat="@drawable/ic_baseline_history_24"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:drawableTopCompat="@drawable/ic_baseline_history_24" />
+                app:layout_constraintEnd_toEndOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
 

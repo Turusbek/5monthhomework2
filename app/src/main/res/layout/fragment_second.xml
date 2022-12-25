@@ -14,6 +14,12 @@
         app:strokeColor="@color/black"
         app:strokeWidth="1dp">
 
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:background="@drawable/img2"
+            android:id="@+id/imageView"/>
+
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -23,7 +29,7 @@
                 android:id="@+id/tvYou"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="You"
+                android:text="@string/you"
                 android:textColor="@color/black"
                 android:textSize="18sp"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -36,7 +42,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="Me"
+                android:text="@string/me"
                 android:textColor="@color/black"
                 android:textSize="18sp"
                 app:layout_constraintEnd_toEndOf="@id/tvYou"
@@ -44,11 +50,11 @@
                 app:layout_constraintTop_toBottomOf="@id/tvYou" />
 
             <TextView
+                android:id="@+id/tvPercentage"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20sp"
-                android:text="100%"
-                android:id="@+id/tvPercentage"
+                android:text="@string/percentage"
                 android:textColor="@color/black"
                 android:textSize="26sp"
                 app:layout_constraintEnd_toEndOf="@id/tvMe"
@@ -56,17 +62,18 @@
                 app:layout_constraintTop_toBottomOf="@id/tvMe" />
 
             <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_try_again"
                 android:layout_width="150dp"
                 android:layout_height="60dp"
-                app:cornerRadius="15dp"
-                android:text="Try Again"
-                android:id="@+id/btn_try_again"
                 android:layout_margin="18dp"
-                android:textColor="@color/black"
                 android:backgroundTint="@color/violet"
-                app:layout_constraintStart_toStartOf="@+id/tvPercentage"
+                android:text="@string/again"
+                android:textColor="@color/black"
+                app:cornerRadius="15dp"
                 app:layout_constraintEnd_toEndOf="@+id/tvPercentage"
-                app:layout_constraintTop_toBottomOf="@+id/tvPercentage"/>
+                app:layout_constraintStart_toStartOf="@+id/tvPercentage"
+                app:layout_constraintTop_toBottomOf="@+id/tvPercentage" />
+
             <TextView
                 android:id="@+id/tv_home"
                 android:layout_width="wrap_content"

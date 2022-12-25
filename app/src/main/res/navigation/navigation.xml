@@ -9,7 +9,7 @@
         android:id="@+id/mainFragment"
         android:name="com.example.a5monthhomework2.fragment.MainFragment"
         android:label="fragment_mainragment"
-        tools:layout="@layout/fragment_mainragment" >
+        tools:layout="@layout/fragment_mainragment">
         <action
             android:id="@+id/action_mainFragment_to_secondFragment"
             app:destination="@id/secondFragment" />
@@ -20,16 +20,26 @@
         android:id="@+id/secondFragment"
         android:name="com.example.a5monthhomework2.fragment.SecondFragment"
         android:label="fragment_second"
-        tools:layout="@layout/fragment_second" >
+        tools:layout="@layout/fragment_second">
         <argument
-            app:argType="string"
-            android:name="et_you" />
+            android:name="et_you"
+            app:argType="string" />
         <argument
-            app:argType="string"
-            android:name="et_me"/>
+            android:name="et_me"
+            app:argType="string" />
         <argument
-            app:argType="string"
-            android:name="percentage"/>
+            android:name="percentage"
+            app:argType="string" />
 
     </fragment>
+    <fragment
+        android:id="@+id/onBoardFragment"
+        android:name="com.example.a5monthhomework2.fragment.OnBoardFragment"
+        android:label="fragment_on_board"
+        tools:layout="@layout/fragment_on_board" />
+    <fragment
+        android:id="@+id/startFragment"
+        android:name="com.example.a5monthhomework2.fragment.StartFragment"
+        android:label="fragment_start"
+        tools:layout="@layout/fragment_start" />
 </navigation>
